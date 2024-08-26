@@ -336,7 +336,14 @@ export const getUsersProjects = async (userId: number, token?: string): Promise<
 };
 
 // create_job
-export const createJob = async (teamId: number, title: string, description: string, token?: string): Promise<Empty<Job>> => {
+export const createJob = async (params: {
+    teamId: number;
+    title: string;
+    description: string;
+    token?: string;
+}): Promise<Empty<Job>> => {
+    const {teamId, title, description, token} = params;
+
     return await request<Job>({
         method: 'create_job',
         host: RPCHosts.Platform,

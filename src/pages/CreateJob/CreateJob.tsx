@@ -33,12 +33,12 @@ function JobCreate() {
     }
 
     const handleCreateJob = useCallback(() => {
-        createJob(
-            Math.floor(Math.random() * (1000 - 1 + 1)) + 1,
+        createJob({
+            teamId: Math.floor(Math.random() * (1000 - 1 + 1)) + 1,
             title,
-            description, 
-            getTokenFromCookies()
-        )
+            description,
+            token:  getTokenFromCookies(),
+        })
             .then(job => {
                 dispatch({
                     type: currentJobActions.SET_ACTIVE_JOB,
@@ -59,7 +59,14 @@ function JobCreate() {
                         <Text className={cName('header')}>Название вакансии</Text>
                     </label>
 
-                    <input className={cName('input')} name="title" type="text" value={title} placeholder="Название вакансии" onChange={changeTitle}/>
+                    <input
+                        className={cName('input')}
+                        name="title"
+                        type="text"
+                        value={title}
+                        placeholder="Название вакансии"
+                        onChange={changeTitle}
+                    />
                 </div>
 
                 <div className={cName('title')}>
@@ -67,7 +74,14 @@ function JobCreate() {
                         <Text className={cName('header')}>Описание вакансии</Text>
                     </label>
 
-                    <input className={cName('input', {high: true})} name="description" type="text" value={description} placeholder="Описание вакансии" onChange={changeDescription}/>
+                    <input
+                        className={cName('input', {high: true})}
+                        name="description"
+                        type="text"
+                        value={description}
+                        placeholder="Описание вакансии"
+                        onChange={changeDescription}
+                    />
                 </div>
 
                 <Skills title="Укажите нужные навыки"/>
