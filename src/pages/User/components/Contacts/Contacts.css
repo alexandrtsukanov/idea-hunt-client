@@ -1,0 +1,31 @@
+.contacts {
+    background-color: #fff;
+    border-radius: 8px;
+    border: solid 1px #98A2B3;
+    
+    padding: 24px;
+    height: 180px;
+    min-width: 160px;
+    width: 25%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contacts-email {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contacts-email-header, .contacts-phone-header {
+    display: flex;
+    gap: 10px;
+}
+
+.contacts-edit {
+    position: relative;
+    top: 5px;
+
+    cursor: pointer;
+}

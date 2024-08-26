@@ -1,0 +1,39 @@
+.project-filters {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-filters-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-filters-field-title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;    
+}
+
+.project-filters-field {
+    display: flex;
+    align-items: center;
+
+    margin: 4px 0;
+}
+
+.project-filters-boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-filters-box {
+    margin-right: 8px;
+    height: 13px;
+    width: 13px;
+}
+
+.project-filters-chbx {
+    height: 13px;
+}

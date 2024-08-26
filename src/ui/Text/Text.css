@@ -1,0 +1,45 @@
+.text_ordinary {
+    font-family: 'Inter';
+    font-style: normal;
+
+    color: #000;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 14px;
+
+    margin: 0;
+}
+
+.text_type_light {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+
+    color: #667085;
+}
+
+.text_type_violet {
+    color: #6941C6;
+}
+
+.text_type_wrapped {
+    color: #475467;
+}
+
+.text_type_large {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+}
+
+.text_type_bold {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.text {
+    font-family: 'Inter';
+    font-style: normal;
+}

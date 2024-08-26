@@ -1,0 +1,33 @@
+.edit-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.edit-profile-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.edit-profile-input-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    width: 50%;
+}
+
+.edit-profile-input-block-chbx {
+    display: flex;
+}
+
+.edit-profile-chbx {
+    width: 18px;
+    height: 18px;
+    margin: 0 6px;
+}
+
+.edit-profile-input_about {
+    height: 72px;
+}

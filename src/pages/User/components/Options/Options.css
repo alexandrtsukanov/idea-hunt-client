@@ -1,0 +1,15 @@
+.user-options {
+    display: flex;
+    justify-content: flex-start;
+    gap: 27px;
+}
+
+.user-options-point {
+    cursor: pointer;
+}
+
+.user-options-line {
+    margin-top: 13px;
+
+    border: 2px solid #000;
+}

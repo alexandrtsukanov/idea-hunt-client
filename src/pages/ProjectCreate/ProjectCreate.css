@@ -1,0 +1,49 @@
+.project-create-title {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-create-input {
+    height: 24px;
+}
+
+.project-create-input_high {
+    height: 72px;
+}
+
+.project-create-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-create-chbx {
+    height: 13px;
+}
+
+.project-create-innovations, .project-create-industries {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.project-create-checkboxes {
+    display: flex;
+    justify-content: flex-start;
+    gap: 32px;
+
+    margin-bottom: 16px;
+}
+
+.project-create-header {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.project-create-header-mb {
+    font-size: 18px;
+    font-weight: 600;
+
+    margin-bottom: 16px;
+}

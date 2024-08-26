@@ -1,0 +1,35 @@
+.title-home-page-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+}
+
+.title-home-page-card {
+    background-color: #fff;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(100vw / 3 - 36px);
+    height: 100px;
+}
+
+.title-home-page-title {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.title-home-page-val {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.title-home-page-item {
+    color: #667085;
+
+    font-size: 14px;
+}

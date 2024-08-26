@@ -1,0 +1,28 @@
+.btn {
+    cursor: pointer;
+    font-weight: 800;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    padding: 0 8px;
+    width: 180px;
+    height: auto;
+    min-height: 42px;
+    flex-wrap: wrap;
+  
+    border-radius: 8px;
+    border: none;
+  
+    background-color:#6941C6;
+    color: #fff;
+
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.btn:hover {
+    background-color:#49259e;
+}

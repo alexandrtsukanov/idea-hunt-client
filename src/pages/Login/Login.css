@@ -1,0 +1,42 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+}
+
+.login-form-input {
+    display: flex;
+    flex-direction: column;
+    
+    margin: 8px 0;
+
+    width: 100%;
+}
+
+.login-form-input_hidden {
+    display: none;
+}
+
+.login-form-btn {
+    margin-top: 16px;
+    width: 100%;
+}
+
+.login-form-label {
+    margin-bottom: 16px;
+
+    font-size: large;
+}
+
+.login-form-title {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 30px;
+    font-weight: 600;
+    
+    text-align: center;
+}

@@ -1,0 +1,17 @@
+.projects-page-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.projects-page-list {
+   width: 75%;
+}
+
+.projects-page-filtration {
+    width: 25%;
+}
+
+.projects-page-my_hidden {
+    display: none;
+}
