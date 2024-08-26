@@ -1,4 +1,7 @@
-import { ISearchParams, Empty, User, UserData, UsersList } from "../types/common";
+import { ISearchParams, Empty } from "../types/common";
+import { User, UserData } from "../types/passport";
+import { UsersList } from "../types/platform";
+
 import { request, RPCHosts } from "../utils/api";
 
 export const getAuthorizedUser = async (token?: string): Promise<Empty<UserData>> => {

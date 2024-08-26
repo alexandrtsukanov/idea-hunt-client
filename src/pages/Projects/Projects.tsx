@@ -3,7 +3,7 @@ import { useQuery} from 'react-query';
 import { cn } from '@bem-react/classname';
 
 import { getAllProjects } from '../../api/platform';
-import { ProjectData } from '../../types/common';
+import { ProjectData } from '../../types/platform';
 import ProjectsList from './components/ProjectsList';
 import Filtration from './components/Filtration';
 import Spinner from '../../ui/Spinner';

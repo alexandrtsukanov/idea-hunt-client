@@ -1,6 +1,6 @@
-import { 
+import {ISearchParams, Empty} from "../types/common";
+import {    
     Application,
-    ISearchParams, 
     IStats, 
     Job, 
     JobsList, 
@@ -12,8 +12,8 @@ import {
     ProjectTeamMember, 
     Skill, 
     Team, 
-    Empty 
-} from "../types/common";
+} from "../types/platform";
+
 import { request, RPCHosts } from "../utils/api";
 
 export const getAllProjects = async (query: string, options?: ISearchParams): Promise<Empty<ProjectsList>> => {

@@ -1,4 +1,3 @@
-import { Project } from "../../types/common";
 import { IBaseStore } from "../types/store";
 import { ApplicationsAction, ApplicationsActions } from "../types/applications";
 

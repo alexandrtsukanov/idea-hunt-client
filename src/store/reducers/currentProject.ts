@@ -1,7 +1,5 @@
-import { User, Nullable } from "../../types/common";
 import { CurrentProjectActions, CurrentProjectAction } from "../types/currentProject";
 
-import { AuthUserAction, AuthUserActions } from "../types/authUser";
 import { IBaseStore } from "../types/store";
 import { lsGetCurrentProject } from "../../utils/storage";
 

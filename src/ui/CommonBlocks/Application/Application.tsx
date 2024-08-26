@@ -1,20 +1,17 @@
-import React, { FC, memo, useCallback, useEffect, useMemo, useState} from 'react';
+import React, { FC, memo, useCallback, useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ROUTES } from '../../../utils/routes';
 import { cn } from '@bem-react/classname'
-import { applyToJob, getJobApplication, getApplications, getVacancy, replyApplication } from '../../../api/platform';
-import { getTokenFromCookies } from '../../../utils/cookie';
+import { replyApplication } from '../../../api/platform';
 import { useDispatch } from 'react-redux';
-import { getCurrentVacancyAction } from '../../../store/actions/jobs';
-import { useSelector } from 'react-redux';
-import { authUserSelector } from '../../../store/selectors/users';
-import { DEFAULT_AVATAR } from '../../../utils/consts';
 import { getUserProfile } from '../../../api/passport';
-import { Application, Nullable, User, UserData } from '../../../types/common';
-import { getUserProfileAction } from '../../../store/actions/user';
-import './Application.css';
 import Button from '../../Button';
 import { CurrentUserActions } from '../../../store/types/currentUser';
+import { Application } from '../../../types/platform';
+import { User, UserData } from '../../../types/passport';
+import { Nullable } from '../../../types/common';
+
+import './Application.css';
 
 const cName = cn('application');
 

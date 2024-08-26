@@ -1,4 +1,4 @@
-import { UserData } from "../../types/common";
+import { UserData } from "../../types/passport";
 import { CommonAction } from '../../types/common';
 
 export enum AuthUserActions {

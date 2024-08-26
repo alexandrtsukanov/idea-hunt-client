@@ -1,4 +1,5 @@
-import { CommonAction, Nullable, UserData } from "../../types/common";
+import { CommonAction, Nullable } from "../../types/common";
+import { UserData } from "../../types/passport";
 
 export enum CurrentUserActions {
     SET_USER_SHOWN = 'SET_USER_SHOWN',

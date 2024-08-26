@@ -1,4 +1,5 @@
-import { Empty, Vote } from "../types/common";
+import { Empty } from "../types/common";
+import { Vote } from "../types/platform";
 import { request, RPCHosts } from "../utils/api";
 
 interface IVoteArgs {

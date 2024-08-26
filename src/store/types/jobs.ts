@@ -1,4 +1,5 @@
-import { Job, CommonAction } from "../../types/common";
+import { CommonAction } from "../../types/common";
+import { Job } from "../../types/platform";
 
 export enum JobsActions {
     SET_JOBS = 'SET_JOBS',

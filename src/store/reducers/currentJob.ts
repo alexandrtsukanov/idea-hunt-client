@@ -1,7 +1,5 @@
-import { User, Nullable } from "../../types/common";
 import { currentJobAction, currentJobActions } from "../types/currentJob";
 
-import { AuthUserAction, AuthUserActions } from "../types/authUser";
 import { IBaseStore } from "../types/store";
 import { lsGetCurrentJob } from "../../utils/storage";
 

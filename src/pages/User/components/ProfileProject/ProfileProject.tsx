@@ -2,7 +2,7 @@ import React, { FC, memo, useState } from 'react';
 import {useQuery} from 'react-query';
 import { cn } from '@bem-react/classname';
 
-import { ProjectStage } from '../../../../types/common';
+import { ProjectStage } from '../../../../types/platform';
 import { getCurrentProject } from '../../../../api/platform';
 import { getCompleteStages } from '../../../../utils/getStages';
 import Text from '../../../../ui/Text';

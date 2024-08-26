@@ -1,4 +1,4 @@
-import { Project } from "../../types/common";
+import { Project } from "../../types/platform";
 import { CommonAction } from '../../types/common';
 
 export enum ProjectsActions {

@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useQuery} from 'react-query';
 import {cn} from '@bem-react/classname';
 import { useSelector } from 'react-redux';
@@ -11,7 +11,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ROUTES } from '../../utils/routes';
 import Button from '../../ui/Button'
-import { ProjectData, ProjectStage } from '../../types/common';
+import { ProjectData, ProjectStage } from '../../types/platform';
 import { getCompleteStages } from '../../utils/getStages';
 import { getUserProfile } from '../../api/passport';
 import Spinner from '../../ui/Spinner';
@@ -136,4 +136,4 @@ function ProjectPage() {
         </div>
     )
 }
-export default memo(ProjectPage);
+export default ProjectPage;

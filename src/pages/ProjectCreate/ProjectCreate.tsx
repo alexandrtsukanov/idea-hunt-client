@@ -1,14 +1,14 @@
-import React, { ChangeEvent, memo, useCallback, useEffect, useState } from 'react';
-import {QueryClient} from 'react-query';
-import { createProject } from '../../api/platform';
-import { getTokenFromCookies } from '../../utils/cookie';
+import React, { ChangeEvent, FC, memo, useCallback, useEffect, useMemo, useState } from 'react';
 import {cn} from '@bem-react/classname';
 import { useDispatch, useSelector } from 'react-redux';
-import { CurrentProjectActions } from '../../store/types/currentProject';
 import { useNavigate } from 'react-router';
-import { ROUTES } from '../../utils/routes';
-import { getAuthorizedUserAction } from '../../store/actions/user';
 
+import { createProject } from '../../api/platform';
+import { getTokenFromCookies } from '../../utils/cookie';
+import { CurrentProjectActions } from '../../store/types/currentProject';
+import { ROUTES } from '../../utils/routes';
+import { SelectedType } from '../../types/common';
+import { getAuthorizedUserAction } from '../../store/actions/user';
 import Button from '../../ui/Button';
 import Text from '../../ui/Text';
 import { industriesSelector, innovationsSelector } from '../../store/selectors/projects';
@@ -17,10 +17,27 @@ import './ProjectCreate.css';
 
 const cName = cn('project-create');
 
-type SelectedType<T> = {
-    name: T;
+type CheckboxProps = FC<{
+    name: string;
     selected: boolean;
-}
+    onChange: (name: string) => void;
+}>;
+
+const Checkbox: CheckboxProps = memo(({name, selected, onChange}) => {
+    return (
+        <div>
+            <label htmlFor={name}>{name}</label>
+
+            <input
+                name={name}
+                className={cName('chbx')}
+                checked={selected}
+                type="checkbox"
+                onChange={() => onChange(name)}
+             />
+        </div>
+    )}
+)
 
 const CREATE_TITLE = 'Создать проект';
 
@@ -51,7 +68,7 @@ function ProjectCreate() {
         setTitle(event.target.value)
     } 
     const changeDescription = (event: ChangeEvent<HTMLInputElement>) => {
-            setDescription(event.target.value)
+        setDescription(event.target.value)
     }
     const changeUrl = (event: ChangeEvent<HTMLInputElement>) => {
         setUrl(event.target.value)
@@ -65,7 +82,7 @@ function ProjectCreate() {
         setInnovationsState(prev => prev.map(el => el.name === name ? {...el, selected: !el.selected} : el));
     }, []);
 
-    const createProjectBtn = useCallback(() => {
+    const handleCreateProject = useCallback(() => {
         createProject(
             {title, description, url}, 
             getTokenFromCookies(),
@@ -76,14 +93,42 @@ function ProjectCreate() {
                     payload: project,
                 });
 
-                return new Promise(() => {
-                    dispatch<any>(getAuthorizedUserAction(getTokenFromCookies()));
-                })
+                dispatch<any>(getAuthorizedUserAction(getTokenFromCookies()));
             })
             .then(() => {
                 navigate(`${ROUTES.PROJECT}/created`);
             })
     }, [title, description, url]);
+
+    const innovationsToShow = useMemo(() => (
+        <div className={cName('innovations')}>
+            <Text className={cName('header')}>Тип инновации</Text>
+
+            {innovationsState.map(({name, selected}) => (
+                <Checkbox
+                    key={name}
+                    name={name}
+                    selected={selected}
+                    onChange={changeInnovations}
+                />
+            ))}
+        </div>
+    ), [innovationsState]);
+
+    const industriesToShow = useMemo(() => (
+        <div className={cName('industries')}>
+            <Text className={cName('header-mb')}>Индустрия</Text>
+
+            {industriesState.map(({name, selected}) => (
+                <Checkbox
+                    key={name}
+                    name={name}
+                    selected={selected}
+                    onChange={changeIndustries}
+                />
+            ))}
+        </div>
+    ), [industriesState]);
         
     return (
         <div className={cName()}>
@@ -134,47 +179,13 @@ function ProjectCreate() {
                 </div>
 
                 <div className={cName('checkboxes')}>
-                    <div className={cName('innovations')}>
-                        <Text className={cName('header')}>Тип инновации</Text>
+                    {innovationsToShow}
 
-                        {innovationsState.map(({name, selected}) => (
-                            <div key={name}>
-                                <label htmlFor={name}>{name}</label>
-
-                                <input
-                                    name={name}
-                                    value={name}
-                                    className={cName('chbx')}
-                                    checked={selected}
-                                    type="checkbox"
-                                    onChange={() => {changeInnovations(name)}}
-                                />
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className={cName('industries')}>
-                        <Text className={cName('header-mb')}>Индустрия</Text>
-
-                        {industriesState.map(({name, selected}) => (
-                            <div key={name}>
-                                <label htmlFor={name}>{name}</label>
-
-                                <input  
-                                    name={name}
-                                    value={name}
-                                    className={cName('chbx')}
-                                    type="checkbox"
-                                    checked={selected}
-                                    onChange={() => {changeIndustries(name)}}
-                                />
-                            </div>
-                        ))}
-                    </div>
+                    {industriesToShow}
                 </div>
             </div>
 
-            <Button onClick={createProjectBtn}>
+            <Button onClick={handleCreateProject}>
                 {CREATE_TITLE}
             </Button>
         </div>

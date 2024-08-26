@@ -1,12 +1,10 @@
-import React, { ChangeEvent, memo, useCallback, useEffect, useMemo, useState } from 'react';
+import React, { ChangeEvent, useCallback, useEffect, useMemo, useState } from 'react';
 import {useQuery} from 'react-query';
 
 import { cn } from '@bem-react/classname'
-import { getProfessions, getSkills } from '../../api/platform';
-import { UserData } from '../../types/common';
+import { UserData } from '../../types/passport';
 import ExpertCard from '../../ui/CommonBlocks/ExpertItem';
 import { getAllProfiles } from '../../api/passport';
-
 import { useParams } from 'react-router';
 import Spinner from '../../ui/Spinner';
 import { LIMITS } from '../../utils/consts';
@@ -135,4 +133,4 @@ function Experts() {
     )
 }
 
-export default memo(Experts);
+export default Experts;

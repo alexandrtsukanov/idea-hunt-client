@@ -1,4 +1,4 @@
-import React, { useState, memo, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useQuery} from 'react-query';
 import { useSelector } from 'react-redux';
 import {useParams } from 'react-router-dom';
@@ -59,4 +59,4 @@ export const Profile = () => {
     );
 }
 
-export default memo(Profile);
+export default Profile;

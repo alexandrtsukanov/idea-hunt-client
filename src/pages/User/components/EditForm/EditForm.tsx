@@ -10,7 +10,7 @@ import { PHONE_REGEXP } from "../../../../utils/consts";
 import { useNavigate } from "react-router";
 import { ROUTES } from "../../../../utils/routes";
 import Button from "../../../../ui/Button";
-import Skills from "../../../../ui/Skills/Skills";
+import Skills from "../../../Skills/Skills";
 
 import './EditProfile.css';
 

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, memo, useCallback, useState } from 'react';
+import React, { ChangeEvent, useCallback, useState } from 'react';
 import {cn} from '@bem-react/classname';
 
 import { createJob } from '../../api/platform';
@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router';
 import Button from '../../ui/Button';
 import Text from '../../ui/Text';
 import { currentJobActions } from '../../store/types/currentJob';
-import Skills from '../../ui/Skills/Skills';
+import Skills from '../Skills/Skills';
 
 import './CreateJob.css';
 
@@ -87,4 +87,4 @@ function JobCreate() {
     )
 }
 
-export default memo(JobCreate);
+export default JobCreate;

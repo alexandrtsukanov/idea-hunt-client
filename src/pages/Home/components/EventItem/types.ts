@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { Event } from "../../../../types/common";
 
 interface IProps {
     title: string,

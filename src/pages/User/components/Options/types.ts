@@ -1,6 +1,4 @@
-import { UnsubscribeListenerOptions } from "@reduxjs/toolkit";
-import { Dispatch, FC, SetStateAction } from "react";
-import { User } from "../../../../types/common";
+import { FC } from "react";
 import { UserOption } from "../../consts";
 
 interface IProps {

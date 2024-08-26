@@ -1,4 +1,5 @@
-import { CommonAction, User } from "../../types/common";
+import { CommonAction } from "../../types/common";
+import { User } from "../../types/passport";
 
 export enum UsersActions {
     SET_USERS = 'SET_USERS',

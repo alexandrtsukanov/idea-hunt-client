@@ -30,4 +30,4 @@ export const UserOptions: Props = ({currentOption, setOptions}) => {
     );
 }
 
-export default memo(UserOptions);
+export default UserOptions;

@@ -1,13 +1,14 @@
-import React, { memo, useMemo, useState } from 'react';
+import React from 'react';
 import {cn} from '@bem-react/classname';
-import { Props } from './types';
 
-import './Bio.css';
+import { Props } from './types';
 import { useNavigate, useParams } from 'react-router';
 import { ROUTES } from '../../../../utils/routes';
 import Button from '../../../../ui/Button';
 import Card from '../../../../ui/Card';
 import Text from '../../../../ui/Text';
+
+import './Bio.css';
 
 const avatarIcon = require('../../../../assets/avatar.svg').default;
 const okIcon = require('../../../../assets/ok.svg').default;
@@ -17,7 +18,7 @@ const inIcon = require('../../../../assets/in.svg').default;
 const cName = cn('bio');
 
 const Bio: Props = ({user, rating}) => {
-        const navigate = useNavigate();
+    const navigate = useNavigate();
     const params = useParams();
 
     const passEditProfile = () => {
@@ -76,4 +77,4 @@ const Bio: Props = ({user, rating}) => {
         </Card>
     )
 }
-export default memo(Bio);
+export default Bio;

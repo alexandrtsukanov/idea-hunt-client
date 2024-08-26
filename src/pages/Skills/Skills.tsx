@@ -1,13 +1,37 @@
 import React, { FC, memo, useCallback, useEffect, useState } from "react";
 import { useQuery} from 'react-query';
 import { cn } from "@bem-react/classname";
-import Spinner from "../Spinner";
+
+import Spinner from "../../ui/Spinner";
 import { getSkills } from "../../api/platform";
-import Text from "../Text";
+import Text from "../../ui/Text";
+import { SelectedType } from "../../types/common";
 
 import './Skills.css';
 
 const cName = cn('edit-skills');
+
+type CheckboxProps = FC<{
+    name: string;
+    selected: boolean;
+    onChange: (name: string) => void;
+}>;
+
+const Checkbox: CheckboxProps = memo(({name, selected, onChange}) => {
+    return (
+        <div className={cName('skills-block')}>
+            <label htmlFor={name}>{name}</label>
+
+            <input
+                name={name}
+                className={cName('chbx')}
+                checked={selected}
+                type="checkbox"
+                onChange={() => onChange(name)}
+             />
+        </div>
+    )}
+)
 
 interface IProps {
     title: string;
@@ -16,7 +40,7 @@ interface IProps {
 const Skills: FC<IProps> = ({title}) => {
     const {data, isLoading, error} = useQuery('skills', () => getSkills());
 
-    const [skills, setSkills] = useState<{name: string, selected: boolean, id: number}[]>([]);
+    const [skills, setSkills] = useState<SelectedType<string>[]>([]);
 
     useEffect(() => {
         data && setSkills(data.map(el => ({name: el.title, selected: false, id: el.id})));
@@ -37,12 +61,13 @@ const Skills: FC<IProps> = ({title}) => {
             <Text>{title}</Text>
 
             <div className={cName('skills')}>
-                {skills?.map(({id, name}) => (
-                    <div key={id} className={cName('skills-block')}>
-                        <label htmlFor={name}>{name}</label>
-
-                        <input name={name} value={name} className={cName('chbx')} type="checkbox" onChange={() => {changeSkills(name)}}/>
-                    </div>    
+                {skills?.map(({id, name, selected}) => (
+                    <Checkbox
+                        name={name}
+                        selected={selected}
+                        onChange={changeSkills}
+                        key={id}
+                    />
                 ))}
             </div>
         </>

@@ -1,5 +1,4 @@
-import { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
-import { Project, ProjectData } from "../../../../types/common";
+import { ChangeEvent, FC } from "react";
 
 interface IProps {
     filterByIndustries: (event: ChangeEvent<HTMLInputElement>) => void;

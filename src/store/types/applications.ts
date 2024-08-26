@@ -1,4 +1,5 @@
-import { Application, CommonAction, Team } from "../../types/common";
+import { CommonAction } from "../../types/common";
+import { Application } from "../../types/platform";
 
 export enum ApplicationsActions {
     SET_APPLICATIONS = 'SET_APPLICATIONS',

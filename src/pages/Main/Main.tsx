@@ -30,7 +30,7 @@ function Main() {
     const location = useLocation();
 
     useEffect(() => {
-        const requestAuthUser = async () => {
+        const requestUser = async () => {
             const user = await getAuthorizedUser(getTokenFromCookies()); // token из кук
 
             if (!user && location.pathname !== ROUTES.INDEX) {
@@ -38,14 +38,14 @@ function Main() {
             }
 
             if (user) {
-                dispatch<any>({
+                dispatch({
                     type: AuthUserActions.SET_USER,
                     payload: user,
                 });
             }
         }
 
-        requestAuthUser();
+        requestUser();
         
         dispatch<any>(allIndustriesAction());
         dispatch<any>(allInnovationsAction());

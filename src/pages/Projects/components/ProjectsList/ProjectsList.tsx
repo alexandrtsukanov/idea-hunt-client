@@ -90,7 +90,13 @@ const ProjectsList: Props = ({projects, setNewProjects}) => {
     return (
         <div className={cName()}>
             <div className={cName('search')}>
-                <input type="text" value={criteria} placeholder="Найти проект" onChange={changeCriteria} className={cName('search-input')}/>
+                <input
+                    type="text"
+                    value={criteria}
+                    placeholder="Найти проект"
+                    onChange={changeCriteria}
+                    className={cName('search-input')}
+                />
 
                 <Button onClick={search}>
                     {allHidden || allMiss ? 'Показать все' : 'Найти'}

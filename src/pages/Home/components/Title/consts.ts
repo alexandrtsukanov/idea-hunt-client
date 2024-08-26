@@ -1,4 +1,4 @@
-import { IStats } from "../../../../types/common";
+import { IStats } from "../../../../types/platform";
 
 export const TITLE = 'Выложи идею и найди команду для ее реализации';
 

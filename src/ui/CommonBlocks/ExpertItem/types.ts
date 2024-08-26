@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Job, User, UserData } from "../../../types/common";
+import { User } from "../../../types/passport";
 
 interface IProps {
     user:  User['user'];

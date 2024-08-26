@@ -1,4 +1,6 @@
-import { Empty, Job, ProjectData, UserData } from "../types/common";
+import { Empty } from "../types/common";
+import { UserData } from "../types/passport";
+import { Job, ProjectData } from "../types/platform";
 
 export function lsSaveCurrentUser(user: UserData) {
     try {

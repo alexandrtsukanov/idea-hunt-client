@@ -22,7 +22,7 @@ function JobPage() {
 
     const [isApplication, setIsApplication] = useState(false);
 
-    const applicationAction = useCallback(() => {       
+    const apply = useCallback(() => {       
         if (!authUserSelector) {
             alert('Чтобы откликнуться на вакансию, войдите или зарегистируйтесь')
             return;
@@ -54,7 +54,7 @@ function JobPage() {
                 </div>
 
                 <div className={cName('btn-container')}>
-                    <Button onClick={applicationAction} className={cName('apply-btn', {applied: isApplication})}>
+                    <Button onClick={apply} className={cName('apply-btn', {applied: isApplication})}>
                         {isApplication ? CANCEL : APPLY}
                     </Button>
                 </div>

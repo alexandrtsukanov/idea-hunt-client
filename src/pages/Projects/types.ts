@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ProjectData } from "../../types/common";
+import { ProjectData } from "../../types/platform";
 
 interface IProps {
     projects: ProjectData[];

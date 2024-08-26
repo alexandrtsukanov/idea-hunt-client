@@ -1,4 +1,6 @@
-import { Job, Nullable, Application, UserData, Team, ProjectData, ProjectStage } from "../../types/common";
+import { Nullable } from "../../types/common";
+import { Job, Application, Team, ProjectData, ProjectStage } from "../../types/platform";
+import { UserData } from "../../types/passport";
 
 export interface IBaseStore {
     authUser:  Nullable<UserData>;

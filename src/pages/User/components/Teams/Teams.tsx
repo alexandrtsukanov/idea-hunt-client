@@ -9,6 +9,8 @@ import { setActiveTeamAction } from '../../../../store/actions/teams';
 import { authUserSelector } from '../../../../store/selectors/users';
 import { ROUTES } from '../../../../utils/routes';
 
+// Не доделано
+
 const cName = cn('teams');
 
 type Props = {
@@ -101,4 +103,4 @@ function Teams() {
         </div>
     )
 }
-export default memo(Teams);
+export default Teams;

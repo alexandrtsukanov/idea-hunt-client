@@ -1,12 +1,12 @@
 import React, { FC, memo } from 'react';
-
-import { CARD_TITLES, TITLE } from './consts';
 import {cn} from '@bem-react/classname';
 
-import './Title.css';
-import { IStats } from '../../../../types/common';
+import { CARD_TITLES, TITLE } from './consts';
+import { IStats } from '../../../../types/platform';
 import Card from '../../../../ui/Card';
 import Text from '../../../../ui/Text';
+
+import './Title.css';
 
 const cName = cn('title-home-page');
 

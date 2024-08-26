@@ -1,5 +1,5 @@
-import { User } from "../../types/common";
 import omit from 'lodash/omit'; 
+import { User } from '../../types/passport';
 
 const notPublicItems: Array<keyof User['user']> = [
     'created_at',

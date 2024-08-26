@@ -1,12 +1,11 @@
 
 import React, { useCallback } from 'react';
-
 import { useSelector } from 'react-redux';
 import {cn} from '@bem-react/classname';
 
 import { applicationsSelector } from '../../store/selectors/applications';
-import Application from '../../ui/CommonBlocks/Application/Application';
 import { useNavigate } from 'react-router-dom';
+import Application from '../../ui/CommonBlocks/Application/Application';
 import Button from '../../ui/Button';
 
 const cName = cn('applications');
